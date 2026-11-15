@@ -1,0 +1,28 @@
+﻿-- Base de datos 
+
+CREATE DATABASE SistemaReparaciones;
+GO
+
+USE SistemaReparaciones;
+GO
+
+-- Tblas
+
+CREATE TABLE Usuarios
+(
+    UsuarioID INT PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    CorreoElectronico VARCHAR(100) NOT NULL,
+    Telefono VARCHAR(20) NULL
+);
+
+CREATE TABLE Equipos
+(
+    EquipoID INT PRIMARY KEY,
+    TipoEquipo VARCHAR(50) NOT NULL,
+    Modelo VARCHAR(50) NOT NULL,
+    UsuarioID INT FOREIGN KEY REFERENCES Usuarios(UsuarioID)
+);
+
+SELECT * FROM Usuarios;
+SELECT * FROM Equipos;
